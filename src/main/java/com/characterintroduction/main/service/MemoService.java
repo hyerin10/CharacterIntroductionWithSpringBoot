@@ -15,9 +15,23 @@ public class MemoService {
 
 	MemoDTO memoDTO;
 
-	public void save(MemoDTO memoDTO) {
-		
+	public void insertMemo(MemoDTO memoDTO) throws Exception {
+		memoRepository.insertMemo(memoDTO);
 	}
 
+	public MemoDTO getMemoByMemoNum(String memoNum) throws Exception {
+		return memoRepository.getMemoByMemoNum(memoNum);
+	}
 	
+	public List<MemoDTO> getAllMemos() throws Exception {
+		return memoRepository.getAllMemos();
+	}
+	
+	public void updateMemo(String memoNum, MemoDTO memoDTO) throws Exception {
+		memoRepository.updateMemo(memoNum, memoDTO);
+	}
+	
+	public void deleteMemo(String memoNum) throws Exception {
+		memoRepository.deleteMemo(memoNum);
+	}
 }

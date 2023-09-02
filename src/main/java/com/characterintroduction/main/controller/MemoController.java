@@ -22,28 +22,28 @@ public class MemoController {
 	MemoService memoService;
 	
 	@PostMapping("/memo")
-	public MemoDTO insertMemo(@RequestBody MemoDTO memo) {
-		//memoService.save(memo);
+	public MemoDTO insertMemo(@RequestBody MemoDTO memo) throws Exception {
+		memoService.insertMemo(memo);
 		return memo;
 	}
 	
-//	@GetMapping("/memos")
-//	public List<MemoDTO> getAllMemos() {
-//		return memoService.getAllMemos();
-//	}
-//	
-//	@GetMapping("/memo/{memoNum}")
-//	public MemoDTO getMemoByMemoNum(@PathVariable String memoNum) {
-//		return memoService.getMemoByMemoNum(memoNum);
-//	}
-//	
-//	@PutMapping("/memo/{memoNum}")
-//	public void updateMemo(@PathVariable String memoNum, @RequestBody MemoDTO memo) {
-//		memoService.updateMemo(memoNum, memo);
-//	}
-//	
-//	@DeleteMapping("/memo/{memoNum}")
-//	public void deleteMemo(@PathVariable String memoNum) {
-//		memoService.deleteMemo(memoNum);
-//	}
+	@GetMapping("/memos")
+	public List<MemoDTO> getAllMemos() throws Exception {
+		return memoService.getAllMemos();
+	}
+	
+	@GetMapping("/memo/{memoNum}")
+	public MemoDTO getMemoByMemoNum(@PathVariable String memoNum) throws Exception {
+		return memoService.getMemoByMemoNum(memoNum);
+	}
+	
+	@PutMapping("/memo/{memoNum}")
+	public void updateMemo(@PathVariable String memoNum, @RequestBody MemoDTO memo) throws Exception {
+		memoService.updateMemo(memoNum, memo);
+	}
+	
+	@DeleteMapping("/memo/{memoNum}")
+	public void deleteMemo(@PathVariable String memoNum) throws Exception {
+		memoService.deleteMemo(memoNum);
+	}
 }
