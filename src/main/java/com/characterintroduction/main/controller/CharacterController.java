@@ -24,27 +24,27 @@ public class CharacterController {
 	CharacterService characterService;
 	
 	@PostMapping("/character")
-	public CharacterDTO insertMemo(@RequestBody CharacterDTO character) {
+	public CharacterDTO insertMemo(@RequestBody CharacterDTO character) throws Exception {
 		return characterService.insertCharacter(character);
 	}
 	
 	@GetMapping("/characters")
-	public List<CharacterDTO> getAllMemos() {
+	public List<CharacterDTO> getAllMemos() throws Exception {
 		return characterService.getAllCharacters();
 	}
 	
 	@GetMapping("/character/{characterNum}")
-	public CharacterDTO getMemoByMemoNum(@PathVariable String characterNum) {
+	public CharacterDTO getMemoByMemoNum(@PathVariable String characterNum) throws Exception {
 		return characterService.getCharacterByCharacterNum(characterNum);
 	}
 	
 	@PutMapping("/character/{characterNum}")
-	public void updateMemo(@PathVariable String characterNum, @RequestBody CharacterDTO character) {
+	public void updateMemo(@PathVariable String characterNum, @RequestBody CharacterDTO character) throws Exception {
 		characterService.updateCharacter(characterNum, character);
 	}
 	
 	@DeleteMapping("/character/{characterNum}")
-	public void deleteMemo(@PathVariable String characterNum) {
+	public void deleteMemo(@PathVariable String characterNum) throws Exception {
 		characterService.deleteCharacter(characterNum);
 	}
 }
