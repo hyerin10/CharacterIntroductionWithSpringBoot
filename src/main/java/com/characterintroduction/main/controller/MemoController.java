@@ -23,26 +23,27 @@ public class MemoController {
 	
 	@PostMapping("/memo")
 	public MemoDTO insertMemo(@RequestBody MemoDTO memo) {
-		return memoService.insertMemo(memo);
+		//memoService.save(memo);
+		return memo;
 	}
 	
-	@GetMapping("/memos")
-	public List<MemoDTO> getAllMemos() {
-		return memoService.getAllMemos();
-	}
-	
-	@GetMapping("/memo/{memoNum}")
-	public MemoDTO getMemoByMemoNum(@PathVariable String memoNum) {
-		return memoService.getMemoByMemoNum(memoNum);
-	}
-	
-	@PutMapping("/memo/{memoNum}")
-	public void updateMemo(@PathVariable String memoNum, @RequestBody MemoDTO memo) {
-		memoService.updateMemo(memoNum, memo);
-	}
-	
-	@DeleteMapping("/memo/{memoNum}")
-	public void deleteMemo(@PathVariable String memoNum) {
-		memoService.deleteMemo(memoNum);
-	}
+//	@GetMapping("/memos")
+//	public List<MemoDTO> getAllMemos() {
+//		return memoService.getAllMemos();
+//	}
+//	
+//	@GetMapping("/memo/{memoNum}")
+//	public MemoDTO getMemoByMemoNum(@PathVariable String memoNum) {
+//		return memoService.getMemoByMemoNum(memoNum);
+//	}
+//	
+//	@PutMapping("/memo/{memoNum}")
+//	public void updateMemo(@PathVariable String memoNum, @RequestBody MemoDTO memo) {
+//		memoService.updateMemo(memoNum, memo);
+//	}
+//	
+//	@DeleteMapping("/memo/{memoNum}")
+//	public void deleteMemo(@PathVariable String memoNum) {
+//		memoService.deleteMemo(memoNum);
+//	}
 }

@@ -12,24 +12,12 @@ import com.characterintroduction.main.repository.MemoRepository;
 public class MemoService {
 	@Autowired
 	MemoRepository memoRepository;
-	
-	public MemoDTO insertMemo(MemoDTO memo) {
-		return memoRepository.insertMemo(memo);
+
+	MemoDTO memoDTO;
+
+	public void save(MemoDTO memoDTO) {
+		
 	}
+
 	
-	public List<MemoDTO> getAllMemos() {
-		return memoRepository.getAllMemos();
-	}
-	
-	public MemoDTO getMemoByMemoNum(String memoNum) {
-		return memoRepository.getMemobyMemoNum(memoNum);
-	}
-	
-	public void updateMemo(String memoNum, MemoDTO memo) {
-		memoRepository.updateMemo(memoNum, memo);
-	}
-	
-	public void deleteMemo(String memoNum) {
-		memoRepository.deleteMemo(memoNum);
-	}
 }

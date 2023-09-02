@@ -1,15 +1,18 @@
 package com.characterintroduction.main.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
-@Getter
-@Setter
-@AllArgsConstructor
+@Data
 public class MemoDTO {
 	private String memoNum;
 	private String characterNum;
 	private String memoTitle;
-	private String memoContent;	
+	private String memoContent;
+	
+	public MemoDTO(String memoNum, String characterNum, String memoTitle, String memoContent) {
+		this.memoNum = memoNum;
+		this.characterNum = characterNum;
+		this.memoTitle = memoTitle;
+		this.memoContent = memoContent;
+	}
 }
