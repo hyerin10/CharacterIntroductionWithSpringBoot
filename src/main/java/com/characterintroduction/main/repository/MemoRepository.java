@@ -16,9 +16,9 @@ import com.characterintroduction.main.dto.MemoDTO;
 
 @Repository
 public class MemoRepository {
-	
+
 	private static final String DRIVER = "org.mariadb.jdbc.Driver";
-	private static final String URL = "jdbc:mariadb://localhost:13306/characterintroduction";
+	private static final String URL = "jdbc:mariadb://localhost:13306/character_introduction";
 	private static final String USER = "";
 	private static final String PW = "";
 	
